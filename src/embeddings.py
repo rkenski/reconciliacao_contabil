@@ -1,9 +1,10 @@
 import openai
+import os
 import time
+import pandas as pd
+import concurrent.futures
 from openai.error import APIConnectionError
-from config import OPENAI_API_KEY
-
-openai.api_key = OPENAI_API_KEY
+from pathlib import Path
 
 def get_embedding(text, model="text-embedding-3-large", retry_count=3):
     """Get the embedding for a given text."""
@@ -11,6 +12,6 @@ def get_embedding(text, model="text-embedding-3-large", retry_count=3):
         try:
             return openai.Embedding.create(input=text, model=model)
         except APIConnectionError:
-            time.sleep(1)  # Wait before retrying
+            time.sleep(1)
     print(f"Failed to get embedding for text: {text}")
     return None
