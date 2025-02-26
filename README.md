@@ -13,8 +13,6 @@ accounting_reconciliation/
 │   │── data_processing.py    # File operations and data handling
 │   │── embeddings.py         # OpenAI embedding handling
 │   │── main.py               # Main script to run reconciliation
-│── .env                      # (Ignored) Stores API keys securely
-│── .gitignore                # Ignores .env and data files
 │── requirements.txt          # Required dependencies
 │── README.md                 # Project documentation
 ```
